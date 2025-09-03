@@ -7,7 +7,7 @@ if number < 0:
     last_digit = pos_number % 10
     last_digit = -last_digit
 else:
-     last_digit = number % 10
+    last_digit = number % 10
 
 if last_digit > 5:
     print("Last digit of {} is {} and is greater than 5".
