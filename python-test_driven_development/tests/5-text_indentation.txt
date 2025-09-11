@@ -1,0 +1,32 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Hello world")
+Hello world
+
+>>> text_indentation("Hi there, how yall doing? We feel great, thank you. Just thinking: I'm tired AF.")
+Hi there, how yall doing?
+<BLANKLINE>
+We feel great, thank you.
+<BLANKLINE>
+Just thinking:
+<BLANKLINE>
+I'm tired AF.
+<BLANKLINE>
+
+>>> text_indentation("...")
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+
+>>> text_indentation(" Leading spaces. Trailing spaces ")
+Leading spaces.
+<BLANKLINE>
+Trailing spaces
+
+>>> text_indentation(25)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string

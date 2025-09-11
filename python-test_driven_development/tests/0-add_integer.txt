@@ -1,0 +1,39 @@
+>>> add_integer = __import__("0-add_integer").add_integer
+
+# int neg + pos
+>>> add_integer(1, 2)
+3
+>>> add_integer(0, 0)
+0
+>>> add_integer(-5, 3)
+-2
+>>> add_integer(10, -20)
+-10
+
+# floats pos + neg
+>>> add_integer(3.7, 4.2)
+7
+>>> add_integer(-2.9, 2.1)
+0
+>>> add_integer(0.0, 0.0)
+0
+
+# only one arg
+>>> add_integer(2)
+100
+>>> add_integer(100.5)
+198
+
+# wrong type / None / list
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>> add_integer(None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer([1, 2])
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer

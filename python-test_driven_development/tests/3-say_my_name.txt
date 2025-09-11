@@ -1,0 +1,29 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# normal str
+>>> say_my_name("a", "b")
+My name is a b
+>>> say_my_name("aaaaaaaaaaaaaaa", "bbbbbbbbbbbbb")
+My name is aaaaaaaaaaaaaaa bbbbbbbbbbbbb
+>>> say_my_name(" ", "b")
+My name is   b
+>>> say_my_name("@#$%^&*()", "b")
+My name is @#$%^&*() b
+
+# one
+>>> say_my_name("a")
+My name is a 
+
+# wrong type
+>>> say_my_name(1, "b")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+>>> say_my_name("a", 2)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+>>> say_my_name(1, 2)
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
