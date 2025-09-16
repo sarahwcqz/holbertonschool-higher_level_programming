@@ -123,6 +123,7 @@ class Rectangle:
         Returns:
             Rectangle: A new Rectangle instance with width == height == size.
         """
+        return cls(size, size)
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
