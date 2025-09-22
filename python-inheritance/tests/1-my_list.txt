@@ -1,0 +1,30 @@
+>>> MyList = __import__('1-my_list').MyList
+
+# liste vide
+>>> l = MyList()
+>>> l.print_sorted()
+[]
+
+# liste avec un élément
+>>> l = MyList([5])
+>>> l.print_sorted()
+[5]
+
+# liste avec plusieurs éléments
+>>> l = MyList([3, 1, 4, 2])
+>>> l.print_sorted()
+[1, 2, 3, 4]
+
+# ajouter un élément et trier
+>>> l.append(0)
+>>> l.print_sorted()
+[0, 1, 2, 3, 4]
+
+# la liste originale n'est pas modifiée
+>>> l
+[3, 1, 4, 2, 0]
+
+# liste déjà en ordre
+>>> l2 = MyList([1, 2, 3])
+>>> l2.print_sorted()
+[1, 2, 3]
