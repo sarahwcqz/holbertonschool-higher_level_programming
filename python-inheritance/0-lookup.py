@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """
-Return attributes defined in an object's __dict__.
+Module defining a function to list available attributes and methods of an object.
 """
 
-
 def lookup(obj):
-    """List attribute names of obj."""
-    return list(obj.__dict__)
+    """Return a list of available attributes and methods of an object."""
+    return list(dir(obj))
