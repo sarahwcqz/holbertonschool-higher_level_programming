@@ -17,7 +17,7 @@ class VerboseList(list):
     def extend(self, item):
         """Extend the list and print a message."""
         super().extend(item)
-        print("Extended the list with [{}] items.".format(item))
+        print("Extended the list with [{}] items.".format(len(item)))
 
     def remove(self, item):
         """Remove an item and print a message, or print if not found."""
