@@ -5,4 +5,4 @@
 def read_file(filename=""):
     """Prints the full content of a file given its filename."""
     with open(filename, encoding="utf-8") as MyFile:
-        print(MyFile.read(), end="")
+        print(MyFile.read())
