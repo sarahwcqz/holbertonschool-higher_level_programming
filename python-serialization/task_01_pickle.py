@@ -30,10 +30,8 @@ class CustomObject:
                 pickle.dump(self, File)
         except PermissionError:
             print("Permission denied")
-            return None
         except OSError:
             print("error with OS")
-            return None
 
     @classmethod
     def deserialize(cls, filename):
