@@ -27,16 +27,15 @@ class CustomObject:
         """serializes to a file using pickle"""
         try:
             with open(filename, mode="wb") as File:
-                    pickle.dump(self, File)
-                    return True
+                pickle.dump(self, File)
+                return True
         except PermissionError:
             print("Permission denied")
             return None
         except OSError:
             print("error with OS")
             return None
-        
-    
+
     @classmethod
     def deserialize(cls, filename):
         """deserializes from a file using pickle"""
