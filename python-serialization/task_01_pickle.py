@@ -25,11 +25,27 @@ class CustomObject:
 
     def serialize(self, filename):
         """serializes to a file using pickle"""
-        with open(filename, mode="wb") as File:
-            pickle.dump(self, File)
+        try:
+            with open(filename, mode="wb") as File:
+                    pickle.dump(self, File)
+                    return True
+        except PermissionError:
+            print("Permission denied")
+            return None
+        except OSError:
+            print("error with OS")
+            return None
+        
     
     @classmethod
     def deserialize(cls, filename):
         """deserializes from a file using pickle"""
-        with open(filename, "rb") as File:
-            return pickle.load(File)
+        try:
+            with open(filename, "rb") as File:
+                return pickle.load(File)
+        except FileNotFoundError:
+            print("File not found.")
+            return None
+        except pickle.UnpicklingError:
+            print("Corrupted or malformed file")
+            return None
