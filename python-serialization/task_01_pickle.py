@@ -28,7 +28,6 @@ class CustomObject:
         try:
             with open(filename, mode="wb") as File:
                 pickle.dump(self, File)
-                return True
         except PermissionError:
             print("Permission denied")
             return None
