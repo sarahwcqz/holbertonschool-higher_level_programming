@@ -12,8 +12,8 @@ def serialize_to_xml(dictionary, filename):
         child = ET.SubElement(root, key)
         child.text = str(value)
 
-    ET.indent(root, space="    ")  # indentation automatique
     tree = ET.ElementTree(root)
+    ET.indent(tree, space="    ", level=0)
     tree.write(filename)
 
 
@@ -23,7 +23,7 @@ def deserialize_from_xml(filename):
     result = {}
 
     for element in root:
-        text = element.text.strip() if element.text else ""
+        text = element.text
         if text.isdigit():
             value = int(text)
         else:
