@@ -28,8 +28,8 @@ def fetch_and_save_posts():
                 'body': post['body']
             }
             post_list.append(new_post)
-    with open('posts.csv', "w", encoding='utf-8', newline='') as f:
-        fieldnames = ['id', 'title', 'body']
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(post_list)
+        with open('posts.csv', "w", encoding='utf-8', newline='') as f:
+            fieldnames = ['id', 'title', 'body']
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(post_list)
