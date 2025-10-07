@@ -38,6 +38,16 @@ class APIhandler(BaseHTTPRequestHandler):
             self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write(b"OK")
+        elif self.path == "/info":
+            info_data = {
+                "version": "1.0",
+                "description": "A simple API built with http.server"
+            }
+            response = json.dumps(info_data)
+            self.send_response(200)
+            self.send_header("Content-type", "application/json")
+            self.end_headers()
+            self.wfile.write(response.encode("utf-8"))
         else:
             self.send_response(404)
             self.send_header("Content-type", "text/plain")
