@@ -2,8 +2,7 @@
 """Module to learn how to develop an API using python's http.server module"""
 
 
-from http.server import BaseHTTPRequestHandler
-import socketserver
+from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
 PORT = 8000
@@ -46,6 +45,6 @@ class APIhandler(BaseHTTPRequestHandler):
             self.wfile.write(b"Not Found =(")
 
 
-with socketserver.TCPServer(("", PORT), APIhandler) as httpd:
+with HTTPServer(("", PORT), APIhandler) as httpd:
     print("serving at port : ", PORT)
     httpd.serve_forever()
