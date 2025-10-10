@@ -45,7 +45,7 @@ def index():
 
 
 ############################## renvoi du token par serveur ####################################
-#genere clee forte aleatoire
+#genere cle forte aleatoire
 strong_key = secrets.token_urlsafe(64)
 app.config["JWT_SECRET_KEY"] = strong_key
 #initialise extension JWT avec Flask
@@ -81,8 +81,21 @@ def login():
 # exige un token valide
 @jwt_required()
 def protected():
-    current_user = get_jwt_identity()
+    current_user = get_jwt_identity()   #renvoi cle du dictionnaire du user => user1 / admin1
     return "JWT Auth: Access Granted"
+
+#gestion d'erreur
+    #token inexistant
+@jwt.unauthorized_loader
+def handle_unauthorized_error(err):
+    return jsonify({"error": "Missing or invalid token"}), 401
+
+    # token invalide
+@jwt.invalid_token_loader
+def handle_invalid_token_error(err):
+    return jsonify({"error": "Invalid token"}), 401
+
+
 
 @app.route("/admin-only")
 @jwt_required()
