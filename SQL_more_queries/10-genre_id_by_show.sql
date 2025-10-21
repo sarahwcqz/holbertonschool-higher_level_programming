@@ -1,5 +1,5 @@
 -- import dump
--- 
+-- right outer join
 USE hbtn_0d_tvshows;
 SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_shows RIGHT JOIN tv_show_genres
