@@ -2,7 +2,8 @@
 """
 takes the name of the state as argument
 then displays its info
--> put a var in the sql query w/ placeholder
+-> put a var in the sql query w/ placeholder using format
+/!\ NOT SECURED
 """
 
 import sys
@@ -21,8 +22,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     cursor.execute(
-        "SELECT * FROM states WHERE name = %s ORDER BY id",
-        (sys.argv[4],)
+        "SELECT * FROM states WHERE name ='{}' ORDER BY id".format(sys.argv[4])
     )
 
     for row in cursor.fetchall():
