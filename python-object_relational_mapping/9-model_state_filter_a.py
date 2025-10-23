@@ -17,7 +17,12 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    all_obj = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
+    all_obj = (
+        session.query(State)
+        .filter(State.name.like('%a%'))
+        .order_by(State.id)
+        .all()
+    )
 
     for row in all_obj:
         print("{}: {}".format(row.id, row.name))
