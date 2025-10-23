@@ -5,7 +5,7 @@ List id of state passed as argument
 
 import sys
 from model_state import Base, State
-from sqlalchemy import (create_engine)
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
@@ -22,4 +22,4 @@ if __name__ == "__main__":
     if spec_name is None:
         print("Not Found")
     else:
-        print(spec_name.id)
+        print("{}".format(spec_name.id))
