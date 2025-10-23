@@ -20,6 +20,6 @@ if __name__ == "__main__":
     spec_name = session.query(State).filter(State.name == sys.argv[4]).first()
 
     if spec_name is None:
-        print("Not Found")
+        print("Not found")
     else:
         print("{}".format(spec_name.id))
