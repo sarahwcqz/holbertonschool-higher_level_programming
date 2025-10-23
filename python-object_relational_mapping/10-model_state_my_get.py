@@ -17,7 +17,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    spec_name = session.query(State.id).filter(State.name == sys.argv[4]).first()
+    spec_name = session.query(State).filter(State.name == sys.argv[4]).first()
 
     if spec_name:
             print(spec_name.id)
