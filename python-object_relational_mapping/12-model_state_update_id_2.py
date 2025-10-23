@@ -17,10 +17,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    louisiana_state = State(name='Louisiana')
-    session.add(louisiana_state)
-    session.commit()
-
     changed_state = (
         session.query(State)
         .filter(State.id == 2)
