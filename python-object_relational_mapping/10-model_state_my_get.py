@@ -17,11 +17,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    spec_name = session.query(State.id).filter(State.name == sys.argv[4])
+    spec_name = session.query(State.id).filter(State.name == sys.argv[4]).first()
 
     if spec_name:
-            for item in spec_name:
-                print(item.id)
+            print(spec_name.id)
     else:
         print("Not Found")
 
