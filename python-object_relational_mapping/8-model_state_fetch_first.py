@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-List all object in a table
+List only first result
 """
 
 import sys
