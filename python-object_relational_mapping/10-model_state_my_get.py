@@ -23,5 +23,3 @@ if __name__ == "__main__":
         print("Not Found")
     else:
         print(spec_name.id)
-
-    session.close()
