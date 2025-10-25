@@ -29,7 +29,7 @@ users = {
 
 
 
-############################## authentification client -> serveur ##############################
+############################## authentification client -> serveur avec login/mdp ##############################
 
 @auth.verify_password
 def verify_password(username, password):
@@ -44,7 +44,7 @@ def index():
 
 
 
-############################## renvoi du token par serveur ####################################
+############################## identification par token ####################################
 #genere cle forte aleatoire
 strong_key = secrets.token_urlsafe(64)
 app.config["JWT_SECRET_KEY"] = strong_key
