@@ -2,4 +2,5 @@ venv
 object.pkl
 data.json
 data.xml
+data.csv
 __pycache__
