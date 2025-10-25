@@ -1,1 +1,5 @@
 venv/
+main_02_requests.py
+__pycache__
+posts.csv
+index.html
