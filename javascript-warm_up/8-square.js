@@ -4,7 +4,7 @@ const x = Number(args[2]);
 let i = 0;
 let j = 0;
 if (Number.isNaN(x)) {
-  console.log('Missing number of occurrences');
+  console.log('Missing size');
 } else {
   while (i < x) {
     console.log('X'.repeat(x));
