@@ -27,7 +27,7 @@ def items():
     return render_template('items.html', items=data["items"])
 
 #######################################################
-@app.route('/product_display')
+@app.route('/products')
 def product_display():
     source = request.args.get('source')
     prod_id = request.args.get('id')
