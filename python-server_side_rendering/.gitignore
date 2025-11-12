@@ -2,3 +2,5 @@ main.py
 SSR-venv/
 template.txt
 items.json
+products.json
+products.csv
